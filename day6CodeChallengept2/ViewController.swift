@@ -17,7 +17,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var labelText: UILabel!
     
-
+    @IBOutlet weak var currentBalance: UILabel!
+    
+    @IBOutlet weak var depositBox: UITextField!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +29,9 @@ class ViewController: UIViewController {
     }
 
 
-    @IBAction func sendingButton(_ sender: UIButton) {
-        
+    @IBAction func sendingButton(_ sender: Any) {
+    
+    
         if userName.text == "JamieD" && passWord.text == "JD1349"
         {
             self.shouldPerformSegue(withIdentifier: "username", sender: self)
@@ -37,8 +42,17 @@ class ViewController: UIViewController {
         
         }
     
+        
     }
     
-    
-}
+//    @IBAction func addDeposit(_ sender: UIButton) {
+//        let balanceAccount : String
+//        if depositBox.text = balanceAccount{
+////figure it out babey
+//
+//
+//        }
+//
+//    }
+//}
 

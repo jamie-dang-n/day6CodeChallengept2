@@ -31,8 +31,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <state key="normal" title="Send"/>
                                 <connections>
-                                    <action selector="sendingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Po2-U2-dBd"/>
-                                    <segue destination="FZP-IP-8sl" kind="show" id="oYG-3L-KRC"/>
+                                    <action selector="sendingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kdM-1E-hte"/>
+                                    <segue destination="FZP-IP-8sl" kind="show" id="bJv-JM-0Xr"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f36-Fx-aJI">
@@ -66,7 +66,7 @@
         <!--View Controller-->
         <scene sceneID="bS1-6t-uiN">
             <objects>
-                <viewController id="Iq1-Ng-Mw7" sceneMemberID="viewController">
+                <viewController id="Iq1-Ng-Mw7" customClass="ViewController" customModule="day6CodeChallengept2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fe6-po-6l4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,6 +84,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addDeposit:" destination="Iq1-Ng-Mw7" eventType="editingDidEnd" id="JoL-r4-7pO"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddF-SC-rdl">
                                 <rect key="frame" x="131" y="403" width="133" height="90"/>
@@ -113,6 +116,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="8ha-OP-P6X"/>
                     </view>
+                    <connections>
+                        <outlet property="depositBox" destination="1QK-pQ-hI7" id="WLf-LS-xaG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QMt-4Y-hrH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -205,13 +211,13 @@
         <!--View Controller-->
         <scene sceneID="fhc-2K-Pq2">
             <objects>
-                <viewController id="6lD-Dw-oUw" sceneMemberID="viewController">
+                <viewController id="6lD-Dw-oUw" customClass="ViewController" customModule="day6CodeChallengept2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UUk-oF-cW0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Balance : " lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMg-gm-9a5">
-                                <rect key="frame" x="31" y="44" width="348" height="375"/>
+                                <rect key="frame" x="33" y="97" width="348" height="146"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="textColor"/>
@@ -235,17 +241,28 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFN-zZ-02n">
+                                <rect key="frame" x="30" y="261" width="348" height="146"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="sIe-aP-aqE"/>
                     </view>
+                    <connections>
+                        <outlet property="calcBalance" destination="iFN-zZ-02n" id="dhO-Nw-qUd"/>
+                        <outlet property="currentBalance" destination="iFN-zZ-02n" id="ehV-ta-GHR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uY7-oH-N2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1625" y="510"/>
+            <point key="canvasLocation" x="1624.6376811594205" y="509.59821428571428"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="oYG-3L-KRC"/>
+        <segue reference="S7C-jg-A41"/>
     </inferredMetricsTieBreakers>
 </document>
